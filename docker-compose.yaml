@@ -1,0 +1,13 @@
+version: '3'
+services:
+  toywhats-auth-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: toywhats-auth-service
+    ports:
+      - '4000:4000'
+    command: npm run dev
+    restart: "on-failure"
+    volumes:
+      - .:/src/app
